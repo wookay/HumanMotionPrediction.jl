@@ -16,7 +16,11 @@ Run on `Blender Julia Console`
 julia> using HumanMotionPrediction
 
 julia> load()
+```
 
+<img src="examples/walking.gif" />
+
+```julia
 julia> load("walking_1")
 
 julia> load("eating_0"; sample=Pkg.dir("HumanMotionPrediction", "samples", "eating_1000.h5"))
