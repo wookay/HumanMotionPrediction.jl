@@ -267,8 +267,12 @@ def load(action="walking_0", sample="walking_10000.h5"):
        for frame in range(nframes):
            a = xyz[frame,:]
            verts = [tuple(x) for x in a.reshape(int(len(a)/3),3)]
-           bpy.context.scene.frame_set(frame)
+           bpy.context.scene.frame_set(frame+1)
            for (idx, co) in enumerate(verts):
                vert = ob.data.vertices[idx]
                vert.co = co
                vert.keyframe_insert("co")
+
+    ob = bpy.data.objects["gt"]
+    bpy.context.scene.objects.active = ob
+    ob.select = True
